@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Lili Szabó
+	email = lili.szabo@agl.group
+[core]
+	editor = vim
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
