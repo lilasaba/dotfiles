@@ -54,11 +54,18 @@ if has("autocmd")
 	augroup end
 endif
 
+" Re-map moving around splits shortcuts.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Pathogen runtime path manipulation.
 execute pathogen#infect()
 
-
-
+" Map and source .vimrc.
+map <leader>vimrc :tabe ~/.vimrc<cr>
+autocmd bufwritepost .vimrc source $MYVIMRC
 
 
 " Brief help
