@@ -3,7 +3,8 @@
 #PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
 # added by Anaconda3 installer
-export PATH="/home/lili/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
+#export PATH="$PATH:/home/user/anaconda3/bin"
 
 ## Source .bashrc.
 source ~/.bashrc
