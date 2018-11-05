@@ -33,9 +33,10 @@ for file in $files; do
     ln -s $dir/$file ~/$file
 done
 
+# install jedi
+# TODO: this should install jedi in the *default* python3 (with vim 8.1).
+pip3 install jedi
+
 # source bash_profile
 cd ~
 source .bash_profile
-
-# install jedi
-pip install jedi
