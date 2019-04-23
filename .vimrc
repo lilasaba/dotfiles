@@ -16,6 +16,7 @@ filetype off                  " required
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 " Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 "" call vundle#end()            " required
@@ -26,7 +27,6 @@ filetype plugin indent on    " required
 au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
-    \ set shiftwidth=4
     \ set textwidth=79
     \ set expandtab
     \ set autoindent
@@ -34,6 +34,7 @@ au BufNewFile,BufRead *.py
 "set tabstop=8
 "set expandtab
 "set shiftwidth
+"set shiftwidth=4
 "set softtabstop=4
 
 " Modernize.
@@ -68,6 +69,8 @@ set ruler
 " set foldlevel=99
 
 " Flagging trailing withespace.
+" Use the below highlight group when displaying bad whitespace is desired.
+highlight BadWhitespace ctermbg=red guibg=red
 "au BufRead,BufNewFile *.py BadWhiteSpace /\s\+$/
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -90,6 +93,9 @@ nnoremap <leader>- yypVr-
 
 " Pathogen runtime path manipulation.
 execute pathogen#infect()
+
+" Add vim-commentary support for python files.
+autocmd FileType python setlocal commentstring=#\ %s
 
 " Map and source .vimrc.
 map <leader>vimrc :tabe ~/.vimrc<cr>

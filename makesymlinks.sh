@@ -35,6 +35,7 @@ done
 
 # install jedi
 # TODO: this should install jedi in the *default* python3 (with vim 8.1).
+#pip install jedi
 pip3 install jedi
 
 # source bash_profile
