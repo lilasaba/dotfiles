@@ -16,13 +16,28 @@ filetype off                  " required
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 " Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 "" call vundle#end()            " required
 
 filetype plugin indent on    " required
 
-" Other.
+" Tab settings and autoindent.
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+"set tabstop=8
+"set expandtab
+"set shiftwidth
+"set shiftwidth=4
+"set softtabstop=4
+
+" Modernize.
 syntax on
 set nu
 set modeline
@@ -30,22 +45,34 @@ set encoding=utf-8
 set fileformat=unix
 " Print column numbers.
 set ruler
-" Match parentheses.
-" DoMatchParen
 
-" Set py3 interpreter.
-" let g:ycm_python_library_path='~/anaconda3/bin'
-
-" Close preview window after autocompletion.
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_autoclose_preview_window_after_insertion=1
+" Make things better.
+" set encoding=utf-8
+" set scrolloff=3
+" set autoindent
+" set showmode
+" set showcmd
+" set hidden
+" set wildmenu
+" set wildmode=list:longest
+" set visualbell
+" set cursorline
+" set ttyfast
+" set ruler
+" set backspace=indent,eol,start
+" set laststatus=2
+" set relativenumber
+" set undofile
 
 " Enable code folding.
 " set foldmethod=indent
 " set foldlevel=99
 
 " Flagging trailing withespace.
-" au BufRead,BufNewFile *.py BadWhiteSpace /\s\+$/
+" Use the below highlight group when displaying bad whitespace is desired.
+highlight BadWhitespace ctermbg=red guibg=red
+"au BufRead,BufNewFile *.py BadWhiteSpace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Add template for .py files.
 if has("autocmd")
@@ -60,19 +87,17 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Re-maps, default leader: \.
+" Underline line.
+nnoremap <leader>- yypVr-
+
 " Pathogen runtime path manipulation.
 execute pathogen#infect()
+
+" Add vim-commentary support for python files.
+autocmd FileType python setlocal commentstring=#\ %s
 
 " Map and source .vimrc.
 map <leader>vimrc :tabe ~/.vimrc<cr>
 autocmd bufwritepost .vimrc source $MYVIMRC
 
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
