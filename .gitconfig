@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = Lili Szabó
-	email = lili.szabo@agl.group
+	email = lilasaba@gmail.com
 [core]
 	editor = vim
 [alias]
