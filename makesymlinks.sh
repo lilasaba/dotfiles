@@ -38,6 +38,10 @@ done
 pip install jedi
 #pip3 install jedi
 
+# install flake8
+sudo apt install flake8
+
 # source bash_profile
 cd ~
 source .bash_profile
+source .bashrc
