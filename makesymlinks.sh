@@ -12,7 +12,7 @@ dir=~/dotfiles
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # list of files/folders to symlink in homedir
-files=".bashrc .bash_profile .gitconfig .vim .vimrc .tmux.conf"
+files=".bashrc .bash_profile .gitconfig .vim .vimrc .tmux.conf .cronfile"
 ##########
 
 # create dotfiles_old in homedir
@@ -25,7 +25,7 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/$file ~/dotfiles_old/
@@ -45,3 +45,7 @@ sudo apt install flake8
 cd ~
 source .bash_profile
 source .bashrc
+
+# set cronjob
+crontab .cronfile
+
