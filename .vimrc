@@ -57,7 +57,11 @@ set ruler
 " set backspace=indent,eol,start
 " set laststatus=2
 " set relativenumber
-" set undofile
+
+" Create undo dir and undo file.
+call mkdir($HOME."/.vim/undodir", "p", 0700)
+set undodir=~/.vim/undodir
+set undofile
 
 " Enable code folding.
 " set foldmethod=indent
