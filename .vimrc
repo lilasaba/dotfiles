@@ -25,17 +25,12 @@ filetype plugin indent on    " required
 
 " Tab settings and autoindent.
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-"set tabstop=8
-"set expandtab
-"set shiftwidth
-"set shiftwidth=4
-"set softtabstop=4
+   \ set tabstop=4
+   \ softtabstop=4
+   \ shiftwidth=4
+   \ textwidth=79
+   \ expandtab
+   \ autoindent
 
 " Modernize.
 syntax on
@@ -62,7 +57,11 @@ set ruler
 " set backspace=indent,eol,start
 " set laststatus=2
 " set relativenumber
-" set undofile
+
+" Create undo dir and undo file.
+call mkdir($HOME."/.vim/undodir", "p", 0700)
+set undodir=~/.vim/undodir
+set undofile
 
 " Enable code folding.
 " set foldmethod=indent

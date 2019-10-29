@@ -1,5 +1,3 @@
-# vim: tabstop=8 expandtab shiftwidth softtabstop=4
-
 import glob
 import os
 import re
