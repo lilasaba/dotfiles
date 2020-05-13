@@ -76,3 +76,9 @@ if [ -f '/home/lili/google-cloud-sdk/completion.bash.inc' ]; then . '/home/lili/
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 #source /usr/local/bin/virtualenvwrapper.sh
+
+# Activate pyenv.
+#curl https://pyenv.run | bash
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
