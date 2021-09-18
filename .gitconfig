@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Lili Szabó
+	email = 7254027+lilasaba@users.noreply.github.com
+[core]
+	editor = vim
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
